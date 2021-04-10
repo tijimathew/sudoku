@@ -1,13 +1,13 @@
 from square import Square
 import pytest
 
+@pytest.fixture
+def square(self):
+    yield Square()
+
 class TestSquare:
 
-    @pytest.fixture
-    def square_init(self):
-        return Square()
-
-    def test_square_exists(self, square_init):
+    def test_square_exists(self, square):
         assert isinstance(square_init, Square) == True
     
     def test_square_has_required_attributes(self, square_init):
