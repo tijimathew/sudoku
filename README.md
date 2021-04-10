@@ -1,4 +1,5 @@
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=tijimathew&show_icons=true)
+![Respository Stats](https://github-readme-stats.vercel.app/api?username=tijimathew&show_icons=true)
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=tijimathew&theme=blue-green)
 
 # Sudoku
 Personal version of sudoku using python for all versions of the traditional game of sudoku
