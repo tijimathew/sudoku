@@ -1,9 +1,13 @@
-![Respository Stats](https://github-readme-stats.vercel.app/api?username=tijimathew&show_icons=true)
-![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=tijimathew&theme=blue-green)
-
 # Sudoku
 Personal version of sudoku using python for all versions of the traditional game of sudoku
 
+![Respository Stats](https://github-readme-stats.vercel.app/api?username=tijimathew&show_icons=true)
+
+## 😂 Here is a random joke that'll make you laugh!
+![Jokes Card](https://readme-jokes.vercel.app/api)
+
+
+## Overview
 - Each square holds a single digit from 1 - 9.
 - Each box holds 9 squares such that a square cannot hold the same number twice in the same box.
 - Each box is a 3x3 arrangement of squares.
