@@ -1,3 +1,5 @@
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=tijimathew&show_icons=true)
+
 # Sudoku
 Personal version of sudoku using python for all versions of the traditional game of sudoku
 
