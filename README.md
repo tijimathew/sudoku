@@ -1,11 +1,12 @@
+
 # Sudoku
 Personal version of sudoku using python for all versions of the traditional game of sudoku
 
+## 1. GitHub Stats
 ![Respository Stats](https://github-readme-stats.vercel.app/api?username=tijimathew&show_icons=true)
 
-## 😂 Here is a random joke that'll make you laugh!
+## 2. 😂 Here is a random joke that'll make you laugh!
 ![Jokes Card](https://readme-jokes.vercel.app/api)
-
 
 ## Overview
 - Each square holds a single digit from 1 - 9.
