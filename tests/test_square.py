@@ -1,18 +1,19 @@
 from square import Square
+
 import pytest
 
 @pytest.fixture
-def square(self):
+def square():
     yield Square()
 
 class TestSquare:
 
     def test_square_exists(self, square):
-        assert isinstance(square_init, Square) == True
+        assert isinstance(square, Square) == True
     
-    def test_square_has_required_attributes(self, square_init):
-        assert hasattr(square_init, 'value')
-        assert hasattr(square_init, 'horizontal_row_number')
-        assert hasattr(square_init, 'vertical_column_number')
-        assert hasattr(square_init, 'horizontal_box_number')
-        assert hasattr(square_init, 'vertical_box_number')
+    def test_square_has_required_attributes(self, square):
+        assert hasattr(square, 'value')
+        assert hasattr(square, 'horizontal_row_number')
+        assert hasattr(square, 'vertical_column_number')
+        assert hasattr(square, 'horizontal_box_number')
+        assert hasattr(square, 'vertical_box_number')
