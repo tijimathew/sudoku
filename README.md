@@ -1,4 +1,5 @@
 # Sudoku
+Personal version of sudoku using python for all versions of the traditional game of sudoku
 
 - Each square holds a single digit from 1 - 9.
 - Each box holds 9 squares such that a square cannot hold the same number twice in the same box.
