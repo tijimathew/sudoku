@@ -12,6 +12,7 @@ class TestGrid:
         assert hasattr(grid, 'boxes')
         assert hasattr(grid, 'rows')
         assert hasattr(grid, 'columns')
+        assert hasattr(grid, 'squares')
     
     def test_grid_has_nine_rows(self, grid):
         assert len(grid.rows) == 9

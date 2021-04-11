@@ -4,7 +4,7 @@ import pytest
 
 @pytest.fixture
 def square():
-    yield Square()
+    yield Square(0,0,0,0)
 
 class TestSquare:
 
@@ -17,3 +17,4 @@ class TestSquare:
         assert hasattr(square, 'vertical_column_number')
         assert hasattr(square, 'horizontal_box_number')
         assert hasattr(square, 'vertical_box_number')
+           
