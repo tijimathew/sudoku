@@ -13,7 +13,9 @@ Personal version of sudoku using python for all versions of the traditional game
 - Each box holds 9 squares such that a square cannot hold the same number twice in the same box.
 - Each box is a 3x3 arrangement of squares.
 - Each game holds a 3x3 arrangement of boxes.
+- Each vertical column has 9 squares.
 - Each vertical column cannot hold the same number twice in the same column.
+- Each horizontal column has 9 squares.
 - Each horizontal row cannot hold the same number twice in the same row.
 - A digit may appear only once in each square within a box, a single vertical column and a single horizontal row passing through the box.
 

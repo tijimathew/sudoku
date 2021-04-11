@@ -1,4 +1,3 @@
-
 GRID_ROWS = GRID_COLUMNS = 9
 BOX_ROWS = BOX_COLUMNS = 3
 
@@ -7,10 +6,17 @@ class Grid:
         
         self.squares = self._create_grid_squares()
         self.boxes = self._create_grid_boxes()
+        self.rows = self._create_grid_rows()
+        self.columns = self._create_grid_columns()
+        self.row_count = len(self.rows)
+        self.column_count = len(self.columns)
+        self.box_count = len(self.boxes) * len(self.boxes[0])
     
     def clear(self):
         self.squares = self._create_grid_squares()
         self.boxes = self._create_grid_boxes()
+        self.rows = self._create_grid_rows()
+        self.columns = self._create_grid_columns()
 
     def _create_grid_squares(self):
         return [[Square(row, column) for column in range(GRID_COLUMNS)] for row in range(GRID_ROWS)]
@@ -41,9 +47,10 @@ class Row:
 
         self.grid_row = row
         self.square_indices = self._create_square_indices()
+        self.count = len(self.square_indices)
     
     def _create_square_indices(self):
-        return [(self.grid_row, column) for column in range(self.GRID_COLUMNS)]
+        return [(self.grid_row, column) for column in range(GRID_COLUMNS)]
 
 
 class Column:
@@ -53,10 +60,11 @@ class Column:
 
         self.grid_column = column
         self.square_indices = self._create_square_indices()
+        self.count = len(self.square_indices)
     
 
     def _create_square_indices(self):
-        return [(row, self.grid_column) for row in range(self.GRID_ROWS)]
+        return [(row, self.grid_column) for row in range(GRID_ROWS)]
 
 class Box:
 
@@ -67,6 +75,7 @@ class Box:
         self.grid_box_row_index = row
         self.grid_box_column_index = column
         self.square_indices = self._create_square_indices()
+        self.count = len(self.square_indices)
 
 
     def _create_square_indices(self):
