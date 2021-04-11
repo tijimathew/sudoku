@@ -1,55 +1,27 @@
 class Grid:
     def __init__(self):
-        self._create_grid_squares()
+        GRID_ROWS = GRID_COLUMNS = 9
+        BOX_ROWS = BOX_COLUMNS = 3
+        self.squares = [[Square(row, column) for column in range(GRID_COLUMNS)] for row in range(GRID_ROWS)]
+        self.boxes = [[Box(row, column) for column in range(BOX_COLUMNS)] for row in range(BOX_ROWS)]
+        self.rows = [Row() for row in range(GRID_ROWS)]
 
-    def clear(self):
-        self._create_grid_squares()
-
-    def _create_grid_squares(self):
-
-        box_row = 0
-        box_col = 0
-        self.squares = []
-        self.rows = [Row() for i in range(9)]
-        self.cols = [Column() for i in range(9)]
-        self.boxes = [Box() for i in range(9)]
-
-        for grid_row in range(9):
-            for grid_col in range(9):
-                if grid_row % 3 == 0:
-                    box_row = grid_row
-                
-                if grid_col % 3 == 0:
-                    box_col = grid_col
-                
-                square = Square(grid_row, grid_col, box_row, box_col)
-
-                self.rows[grid_row].squares[grid_col] = square
-                self.cols[grid_col].squares[grid_row] = square
-                self.squares[grid_row][grid_col] = square
-
-
-class Row:
-    def __init__(self):
-        self.squares = []
-
-class Column:
-    def __init__(self):
-        self.squares = []
-
-class Box:
-    def __init__(self):
-        self.squares = []
-    
-    def link_squares(self, square):
-        self.row = square.horizontal_box_number
-        self.column = square.vertical_box_number
-        self.squares.append(square)
 
 class Square:
-    def __init__(self, grid_index_row:int, grid_index_column:int, box_index_row:int, box_index_column:int, value:int=None):
-        self.value = value
-        self.horizontal_row_number = grid_index_row
-        self.vertical_column_number = grid_index_column
-        self.horizontal_box_number = box_index_row
-        self.vertical_box_number = box_index_column
+    def __init__(self, row, column):
+        self.grid_row_index = row
+        self.grid_column_index = column
+        self.box_row_index = None
+        self.box_column_index = None
+        self.value = None
+
+class Row:
+    pass
+
+class Column:
+    pass
+
+class Box:
+    def __init__(self, row, column):
+        self.box_row_index = row
+        self.box_column_index = column

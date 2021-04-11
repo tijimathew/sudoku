@@ -1,13 +1,10 @@
 from grid import Grid, Row, Column, Box, Square
+
 import pytest
 
 @pytest.fixture
 def grid():
     yield Grid()
-
-@pytest.fixture
-def square():
-    yield Square(0,0,0,0)
 
 class TestGrid:
 
@@ -39,6 +36,11 @@ class TestGrid:
     def test_box_has_nine_squares(self, grid, test_input, expected):
         assert len(grid.boxes[test_input].squares) == expected
 
+
+@pytest.fixture
+def square():
+    yield Square(0, 0)
+
 class TestSquare:
 
     def test_square_exists(self, square):
@@ -46,7 +48,20 @@ class TestSquare:
     
     def test_square_has_required_attributes(self, square):
         assert hasattr(square, 'value')
-        assert hasattr(square, 'horizontal_row_number')
-        assert hasattr(square, 'vertical_column_number')
-        assert hasattr(square, 'horizontal_box_number')
-        assert hasattr(square, 'vertical_box_number')
+        assert hasattr(square, 'grid_row_index')
+        assert hasattr(square, 'grid_column_index')
+        assert hasattr(square, 'box_row_index')
+        assert hasattr(square, 'box_column_index')
+
+@pytest.fixture
+def box():
+    yield Box(0, 0)
+    
+class TestBox:
+
+    def test_box_exists(self, box):
+        assert isinstance(box, Box) == True
+    
+    def test_square_has_required_attributes(self, box):
+        assert hasattr(box, 'box_row_index')
+        assert hasattr(box, 'box_column_index')
