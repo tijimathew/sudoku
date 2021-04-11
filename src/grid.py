@@ -30,6 +30,18 @@ class Grid:
     def _create_grid_columns(self):
         return [Column(column) for column in range(GRID_COLUMNS)]
 
+    def print_grid(self):
+        
+        for row in range(9):
+            for column in range(9):
+                square_value = self.squares[row][column].value
+                if square_value not in range(1,10):
+                    square_value = "?"
+
+                print("| " + str(square_value), end=" ")
+            
+            print("|\n")
+
 class Square:
     def __init__(self, row, column):
         self.grid_index = (row, column)
@@ -38,7 +50,7 @@ class Square:
         self.box_row_index = row // 3
         self.box_column_index = column // 3
         self.box_index = (row // 3, column // 3)
-        self.value = None
+        self.value = 0
 
 class Row:
 
@@ -86,3 +98,7 @@ class Box:
                 square_indices.append((row, column))
         
         return square_indices
+
+if __name__ == '__main__':
+    grid = Grid()
+    grid.print_grid()
