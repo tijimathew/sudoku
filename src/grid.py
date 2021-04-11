@@ -1,5 +1,3 @@
-from square import Square
-
 class Grid:
     def __init__(self):
         self._create_grid_squares()
@@ -47,3 +45,11 @@ class Box:
         self.row = square.horizontal_box_number
         self.column = square.vertical_box_number
         self.squares.append(square)
+
+class Square:
+    def __init__(self, grid_index_row:int, grid_index_column:int, box_index_row:int, box_index_column:int, value:int=None):
+        self.value = value
+        self.horizontal_row_number = grid_index_row
+        self.vertical_column_number = grid_index_column
+        self.horizontal_box_number = box_index_row
+        self.vertical_box_number = box_index_column
