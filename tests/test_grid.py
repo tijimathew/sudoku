@@ -70,3 +70,7 @@ class TestBox:
         assert hasattr(box, 'grid_box_row_index')
         assert hasattr(box, 'grid_box_column_index')
         assert hasattr(box, 'square_indices')
+
+    @pytest.mark.parametrize("test_input,expected", [(Box(x, y), 9) for y in range(3) for x in range(3)])
+    def test_box_has_nine_square_indices(self, test_input, expected):
+        assert test_input.count == expected
