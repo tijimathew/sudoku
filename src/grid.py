@@ -11,7 +11,9 @@ class Grid:
         self.row_count = len(self.rows)
         self.column_count = len(self.columns)
         self.box_count = len(self.boxes) * len(self.boxes[0])
+        self.remaining_count = self.row_count * self.column_count
     
+
     def clear(self):
         self.squares = self._create_grid_squares()
         self.boxes = self._create_grid_boxes()
@@ -31,9 +33,19 @@ class Grid:
         return [Column(column) for column in range(GRID_COLUMNS)]
 
     def print_grid(self):
+
+        print(" ", end=" ")
+
+        for column in range(9):
+            print("  " + str(column + 1), end=" ")
+        
+        print("\n")
         
         for row in range(9):
             for column in range(9):
+                if column == 0: 
+                    print(str(row + 1), end=" ")    
+
                 square_value = self.squares[row][column].value
                 if square_value not in range(1,10):
                     square_value = "?"
