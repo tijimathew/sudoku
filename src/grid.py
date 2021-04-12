@@ -46,8 +46,8 @@ class Grid:
                 if column == 0: 
                     print(str(row + 1), end=" ")    
 
-                square_value = self.squares[row][column].value
-                if square_value not in range(1,10):
+                square_value = str(self.squares[row][column].value)
+                if square_value not in "123456789":
                     square_value = "?"
 
                 print("| " + str(square_value), end=" ")
